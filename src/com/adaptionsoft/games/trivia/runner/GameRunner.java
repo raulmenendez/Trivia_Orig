@@ -17,9 +17,13 @@ public class GameRunner {
 		aGame.add("Sue");
 		
 		Random rand = new Random();
-	
-		do {
-			
+
+		play(aGame, rand);
+				
+	}
+
+	protected static void play(Game aGame, Random rand) {
+		do {	
 			aGame.roll(rand.nextInt(5) + 1);
 			
 			if (rand.nextInt(9) == 7) {
@@ -27,10 +31,8 @@ public class GameRunner {
 			} else {
 				notAWinner = aGame.wasCorrectlyAnswered();
 			}
-			
-			
-			
-		} while (notAWinner);
 		
+		} while (notAWinner);
 	}
+	
 }
